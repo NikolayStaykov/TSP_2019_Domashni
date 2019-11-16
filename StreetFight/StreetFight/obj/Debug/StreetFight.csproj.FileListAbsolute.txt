@@ -1,1 +1,12 @@
 D:\TSP\SIT 1B\CourseWork2019NikolayStaykov\CourseWorkZad4\StreetFight\StreetFight\bin\Debug\StreetFight.exe.config
+D:\CourseWorks\TSP_2019_Domashni\StreetFight\StreetFight\bin\Debug\StreetFight.exe.config
+F:\Kolio\StreetFight\StreetFight\bin\Debug\StreetFight.exe.config
+F:\Kolio\StreetFight\StreetFight\bin\Debug\StreetFight.exe
+F:\Kolio\StreetFight\StreetFight\bin\Debug\StreetFight.pdb
+F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.csprojAssemblyReference.cache
+F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.Form1.resources
+F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.Properties.Resources.resources
+F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.csproj.GenerateResource.cache
+F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.csproj.CoreCompileInputs.cache
+F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.exe
+F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.pdb

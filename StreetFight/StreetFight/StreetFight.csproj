@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBaseOperations.cs" />
+    <Compile Include="Fight.cs" />
     <Compile Include="Fighter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
