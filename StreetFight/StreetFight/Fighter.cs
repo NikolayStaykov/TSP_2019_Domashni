@@ -8,6 +8,7 @@ namespace StreetFight
 {
     class Fighter
     {
+        private int ID;
         public string Name;
         private int HP;
         private int MaxHP;
@@ -15,8 +16,9 @@ namespace StreetFight
         private int Def;
         private List<Item> Items;
         private int Money;
-        Fighter(string N, int H, int A, int D, int M)
+        Fighter(int I,string N, int H, int A, int D, int M)
         {
+            ID = I;
             Name = N;
             HP = H;
             MaxHP = H;
@@ -33,6 +35,8 @@ namespace StreetFight
                 Att = Att + I.AttBonus;
                 Def = Def + I.DefBonus;
             }
+            DataBaseOperations DB = new DataBaseOperations();
+            DB.UpdateFighter(this);
         }
         public void SetHP(int newHP)
         {
@@ -76,7 +80,7 @@ namespace StreetFight
         }
         public int AttackDamage()
         {
-            if (Att - 10 < 0)
+            if (Att <= 10)
             {
                 return 0;
             }
@@ -84,6 +88,19 @@ namespace StreetFight
             {
                 return Att - 10;
             }
+        }
+        public string GetItemsInString()
+        {
+            string ToReturn = "";
+            foreach (Item item in Items)
+            {
+                ToReturn = ToReturn + item.ID.ToString() + ",";
+            }
+            return ToReturn;
+        }
+        public int getID()
+        {
+            return ID;
         }
     }
 }

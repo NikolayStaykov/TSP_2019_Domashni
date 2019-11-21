@@ -8,6 +8,7 @@ namespace StreetFight
 {
     class Item
     {
+        public int ID;
         public string Name;
         public int HpBomus;
         public int AttBonus;

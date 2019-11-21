@@ -10,3 +10,6 @@ F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.csproj.GenerateResource.c
 F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.csproj.CoreCompileInputs.cache
 F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.exe
 F:\Kolio\StreetFight\StreetFight\obj\Debug\StreetFight.pdb
+D:\CR\TSP_2019_Domashni\StreetFight\StreetFight\bin\Debug\StreetFight.exe.config
+D:\CR\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.exe
+D:\CR\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.pdb
