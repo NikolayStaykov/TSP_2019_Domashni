@@ -16,7 +16,7 @@ namespace StreetFight
         private int Def;
         private List<Item> Items;
         private int Money;
-        Fighter(int I,string N, int H, int A, int D, int M)
+        public Fighter(int I,string N, int H, int A, int D, int M)
         {
             ID = I;
             Name = N;
