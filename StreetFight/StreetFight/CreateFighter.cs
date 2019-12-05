@@ -12,11 +12,11 @@ namespace StreetFight
 {
     public partial class CreateFighter : Form
     {
-        private int Stats;
-        private int Strength = 8;
-        private int Defense = 8;
-        private int Health = 8;
-        private string Name;
+        public int Stats;
+        public int Strength = 8;
+        public int Defense = 8;
+        public int Health = 8;
+        public string Name;
         DataBaseOperations D = new DataBaseOperations();
         public CreateFighter()
         {
@@ -38,14 +38,15 @@ namespace StreetFight
             {
                 Strength++;
                 Stats--;
-                BonusStats.Text = BonusStats.Text + Stats.ToString();
+                BonusStats.Text = "Stat Points: " + Stats.ToString();
             }
-            else if (Stats < 6)
+            else if (numericUpDownForStrength.Value < Strength && Stats < 6)
             {
                 Strength--;
                 Stats++;
-                BonusStats.Text = BonusStats.Text + Stats.ToString();
+                BonusStats.Text = "Stat Points: " + Stats.ToString();
             }
+            numericUpDownForStrength.Value = Strength;
         }
 
         private void numericUpDownForDefense_ValueChanged(object sender, EventArgs e)
@@ -54,14 +55,15 @@ namespace StreetFight
             {
                 Defense++;
                 Stats--;
-                BonusStats.Text = BonusStats.Text + Stats.ToString();
+                BonusStats.Text = "Stat Points: " + Stats.ToString();
             }
-            else if (Stats < 6)
+            else if (numericUpDownForDefense.Value < Defense && Stats < 6)
             {
                 Defense--;
                 Stats++;
-                BonusStats.Text = BonusStats.Text + Stats.ToString();
+                BonusStats.Text = "Stat Points: " + Stats.ToString();
             }
+            numericUpDownForDefense.Value = Defense;
         }
 
         private void numericUpDownForhealth_ValueChanged(object sender, EventArgs e)
@@ -70,14 +72,15 @@ namespace StreetFight
             {
                 Health++;
                 Stats--;
-                BonusStats.Text = BonusStats.Text + Stats.ToString();
+                BonusStats.Text = "Stat Points: " + Stats.ToString();
             }
-            else if (Stats < 6)
+            else if (numericUpDownForhealth.Value < Health && Stats < 6)
             {
                 Health--;
                 Stats++;
-                BonusStats.Text = BonusStats.Text + Stats.ToString();
+                BonusStats.Text = "Stat Points: " + Stats.ToString();
             }
+            numericUpDownForhealth.Value = Health;
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
@@ -90,9 +93,9 @@ namespace StreetFight
             int id = D.GetNewFighterID();
             Fighter fighter = new Fighter(id,Name,Health,Strength,Defense,0);
             D.WriteFighter(fighter);
-            Form MainGame = new MainGame(fighter);
+            /*Form MainGame = new MainGame(fighter);
             MainGame.Show();
-            this.Hide();
+            this.Hide();*/
         }
     }
 }

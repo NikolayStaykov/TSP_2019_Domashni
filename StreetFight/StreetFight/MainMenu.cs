@@ -17,19 +17,18 @@ namespace StreetFight
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void NewFighter_Click(object sender, EventArgs e)
         {
-
+            Form newForm = new CreateFighter();
+            newForm.Show();
+            this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LoadFighter_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            Form newForm = new LoadFighters();
+            newForm.Show();
+            this.Hide();
         }
     }
 }

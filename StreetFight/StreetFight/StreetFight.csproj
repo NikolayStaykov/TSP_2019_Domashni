@@ -53,26 +53,26 @@
     <Compile Include="DataBaseOperations.cs" />
     <Compile Include="Fight.cs" />
     <Compile Include="Fighter.cs" />
-    <Compile Include="MainGame.cs">
+    <Compile Include="LoadFighters.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainGame.Designer.cs">
-      <DependentUpon>MainGame.cs</DependentUpon>
+    <Compile Include="LoadFighters.Designer.cs">
+      <DependentUpon>LoadFighters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateFighter.resx">
       <DependentUpon>CreateFighter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainGame.resx">
-      <DependentUpon>MainGame.cs</DependentUpon>
+    <EmbeddedResource Include="LoadFighters.resx">
+      <DependentUpon>LoadFighters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

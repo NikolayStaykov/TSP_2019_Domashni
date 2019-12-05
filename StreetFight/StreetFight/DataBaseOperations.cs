@@ -9,7 +9,7 @@ namespace StreetFight
 {
     class DataBaseOperations
     {
-        private string DbConn = @"server=SIT3074/COURSEWORKTSP19;database=StreetFight;UID=NikolayStaykov;password=meaningoflife42";
+        private string DbConn = @"server=SIT3074/COURSEWORKTSP19;database=StreetFight;UID=NikolayStaykov;password=meaningoflife42";//@"server=SIT3074\COURSEWORKTSP19;database=StreetFight;UID=NikolayStaykov;password=meaningoflife42";
 
         public void UpdateFighter(Fighter fighter)
         {
@@ -24,13 +24,14 @@ namespace StreetFight
 
         public List<Fighter> ReadFighters()
         {
-            List<Fighter> fighters;
+            List<Fighter> fighters = new List<Fighter>();
             SqlConnection NewConn = new SqlConnection(DbConn);
             NewConn.Open();
             string query = "SELECT * FROM FighterData";
             SqlCommand cmd = new SqlCommand(query, NewConn);
-            SqlDataReader Dreader = new SqlDataReader();
+            SqlDataReader Dreader;
             Dreader = cmd.ExecuteReader();
+            int i = 0;
             while (Dreader.Read())
             {
                 int id = int.Parse(Dreader.GetString(1));
@@ -49,7 +50,7 @@ namespace StreetFight
             string query = "SELECT MAX(ID) FROM FighterData";
             SqlConnection NewConn = new SqlConnection(DbConn);
             SqlCommand cmd = new SqlCommand(query, NewConn);
-            SqlDataReader Dreader = new SqlDataReader();
+            SqlDataReader Dreader;
             Dreader = cmd.ExecuteReader();
             int newID = int.Parse(Dreader.GetString(1));
             newID++;

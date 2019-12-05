@@ -28,51 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainMenuLabel = new System.Windows.Forms.Label();
-            this.NewFighterButton = new System.Windows.Forms.Button();
-            this.LoadFighterButton = new System.Windows.Forms.Button();
+            this.mainMenuLabel = new System.Windows.Forms.Label();
+            this.NewFighter = new System.Windows.Forms.Button();
+            this.LoadFighter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // MainMenuLabel
+            // mainMenuLabel
             // 
-            this.MainMenuLabel.AutoSize = true;
-            this.MainMenuLabel.Location = new System.Drawing.Point(170, 42);
-            this.MainMenuLabel.Name = "MainMenuLabel";
-            this.MainMenuLabel.Size = new System.Drawing.Size(57, 13);
-            this.MainMenuLabel.TabIndex = 0;
-            this.MainMenuLabel.Text = "MainMenu";
-            this.MainMenuLabel.Click += new System.EventHandler(this.label1_Click);
+            this.mainMenuLabel.AutoSize = true;
+            this.mainMenuLabel.Location = new System.Drawing.Point(185, 56);
+            this.mainMenuLabel.Name = "mainMenuLabel";
+            this.mainMenuLabel.Size = new System.Drawing.Size(60, 13);
+            this.mainMenuLabel.TabIndex = 0;
+            this.mainMenuLabel.Text = "Main Menu";
+            this.mainMenuLabel.UseMnemonic = false;
             // 
-            // NewFighterButton
+            // NewFighter
             // 
-            this.NewFighterButton.Location = new System.Drawing.Point(139, 104);
-            this.NewFighterButton.Name = "NewFighterButton";
-            this.NewFighterButton.Size = new System.Drawing.Size(121, 23);
-            this.NewFighterButton.TabIndex = 1;
-            this.NewFighterButton.Text = "NewFighter";
-            this.NewFighterButton.UseVisualStyleBackColor = true;
-            this.NewFighterButton.Click += new System.EventHandler(this.button1_Click);
+            this.NewFighter.Location = new System.Drawing.Point(161, 108);
+            this.NewFighter.Name = "NewFighter";
+            this.NewFighter.Size = new System.Drawing.Size(109, 23);
+            this.NewFighter.TabIndex = 1;
+            this.NewFighter.Text = "New Fighter";
+            this.NewFighter.UseVisualStyleBackColor = true;
+            this.NewFighter.Click += new System.EventHandler(this.NewFighter_Click);
             // 
-            // LoadFighterButton
+            // LoadFighter
             // 
-            this.LoadFighterButton.Location = new System.Drawing.Point(139, 156);
-            this.LoadFighterButton.Name = "LoadFighterButton";
-            this.LoadFighterButton.Size = new System.Drawing.Size(121, 23);
-            this.LoadFighterButton.TabIndex = 2;
-            this.LoadFighterButton.Text = "LoadFighter";
-            this.LoadFighterButton.UseVisualStyleBackColor = true;
-            this.LoadFighterButton.Click += new System.EventHandler(this.button2_Click);
+            this.LoadFighter.Location = new System.Drawing.Point(161, 184);
+            this.LoadFighter.Name = "LoadFighter";
+            this.LoadFighter.Size = new System.Drawing.Size(109, 23);
+            this.LoadFighter.TabIndex = 2;
+            this.LoadFighter.Text = "Load Fighter";
+            this.LoadFighter.UseVisualStyleBackColor = true;
+            this.LoadFighter.Click += new System.EventHandler(this.LoadFighter_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 360);
-            this.Controls.Add(this.LoadFighterButton);
-            this.Controls.Add(this.NewFighterButton);
-            this.Controls.Add(this.MainMenuLabel);
+            this.ClientSize = new System.Drawing.Size(450, 364);
+            this.Controls.Add(this.LoadFighter);
+            this.Controls.Add(this.NewFighter);
+            this.Controls.Add(this.mainMenuLabel);
             this.Name = "MainMenu";
-            this.Text = "Form1";
+            this.Text = "MainMenu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,9 +80,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label MainMenuLabel;
-        private System.Windows.Forms.Button NewFighterButton;
-        private System.Windows.Forms.Button LoadFighterButton;
+        private System.Windows.Forms.Label mainMenuLabel;
+        private System.Windows.Forms.Button NewFighter;
+        private System.Windows.Forms.Button LoadFighter;
     }
 }
-
