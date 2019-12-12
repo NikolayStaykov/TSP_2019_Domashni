@@ -9,17 +9,19 @@ namespace StreetFight
 {
     class DataBaseOperations
     {
-        private string DbConn = @"server=SIT3074/COURSEWORKTSP19;database=StreetFight;UID=NikolayStaykov;password=meaningoflife42";//@"server=SIT3074\COURSEWORKTSP19;database=StreetFight;UID=NikolayStaykov;password=meaningoflife42";
+        private string DbConn = @"server=remotemysql.com;database=oY2hyCUuXz;UID=oY2hyCUuXz;password=iJLqktiah1";
 
         public void UpdateFighter(Fighter fighter)
         {
             SqlConnection NewConn = new SqlConnection(DbConn);
+            NewConn.Open();
             string items = fighter.GetItemsInString();
             int money = fighter.GetMoney();
             string query = "UPDATE FighterData SET FighterHP = " + fighter.GetMaxHP().ToString() +
                 ", FighterAttack = " + fighter.GetAtt().ToString() + ", FighterDefence = " + fighter.GetDef().ToString() +
                 ", FighterItems = " + fighter.GetItemsInString() + ", Money = " + fighter.GetMoney().ToString() + "WHERE ID = " + fighter.getID().ToString() + ";";
             SqlCommand cmd = new SqlCommand(query, NewConn);
+            NewConn.Close();
         }
 
         public List<Fighter> ReadFighters()
@@ -43,6 +45,7 @@ namespace StreetFight
                 Fighter fighter = new Fighter(id, name, health, att, def, money,items);
                 fighters.Add(fighter);
             }
+            NewConn.Close();
             return fighters;
         }
 
@@ -64,10 +67,12 @@ namespace StreetFight
                 string items = Dreader.GetString(6);
                 int money = int.Parse(Dreader.GetString(7));
                 Fighter fighter1 = new Fighter(id, name, health, att, def, money,items);
+                NewConn.Close();
                 return fighter1;
             }
             else
             {
+                NewConn.Close();
                 return null;
             }
         }
@@ -75,22 +80,24 @@ namespace StreetFight
         {
             string query = "SELECT MAX(ID) FROM FighterData";
             SqlConnection NewConn = new SqlConnection(DbConn);
+            NewConn.Open();
             SqlCommand cmd = new SqlCommand(query, NewConn);
             SqlDataReader Dreader;
             Dreader = cmd.ExecuteReader();
             int newID = int.Parse(Dreader.GetString(1));
             newID++;
+            NewConn.Close();
             return newID;
         }
         public void WriteFighter(Fighter fighter)
         {
             SqlConnection NewConn = new SqlConnection(DbConn);
-            string items = fighter.GetItemsInString();
-            int money = fighter.GetMoney();
-            string query = "INSERT INTO FighterData (ID,FighterHP,FighterAttack,FighterDefence,FighterItems,Money)  VALUES(" + fighter.getID() +","+ fighter.GetMaxHP().ToString() +
+            string query = "INSERT INTO FighterData (ID,Name,FighterHP,FighterAttack,FighterDefence,FighterItems,Money)  VALUES(" + fighter.getID() +","+ fighter.GetName() + "," + fighter.GetMaxHP().ToString() +
                 "," + fighter.GetAtt().ToString() + "," + fighter.GetDef().ToString() +
                 "," + fighter.GetItemsInString() + "," + fighter.GetMoney().ToString() + ");";
+            NewConn.Open();
             SqlCommand cmd = new SqlCommand(query, NewConn);
+            NewConn.Close();
         }
 
         public List<Item> GetItems()
@@ -98,7 +105,7 @@ namespace StreetFight
             List<Item> Items = new List<Item>();
             SqlConnection NewConn = new SqlConnection(DbConn);
             NewConn.Open();
-            string query = "SELECT * FROM FighterData;";
+            string query = "SELECT * FROM ItemData;";
             SqlCommand cmd = new SqlCommand(query, NewConn);
             SqlDataReader Dreader;
             Dreader = cmd.ExecuteReader();
@@ -112,6 +119,7 @@ namespace StreetFight
                 item.DefBonus = Dreader.GetInt32(5);
                 Items.Add(item);
             }
+            NewConn.Close();
             return Items;
         }
     }

@@ -24,3 +24,16 @@ C:\CourseWork\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.Pr
 C:\CourseWork\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.csproj.GenerateResource.Cache
 C:\CourseWork\TSP_2019_Domashni\StreetFight\StreetFight\bin\Debug\StreetFight.exe
 C:\CourseWork\TSP_2019_Domashni\StreetFight\StreetFight\bin\Debug\StreetFight.pdb
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\bin\Debug\StreetFight.exe.config
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\bin\Debug\StreetFight.exe
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\bin\Debug\StreetFight.pdb
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.csprojAssemblyReference.cache
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.CreateFighter.resources
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.LoadFighters.resources
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.MainGame.resources
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.MainMenu.resources
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.Properties.Resources.resources
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.Shop.resources
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.csproj.GenerateResource.cache
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.exe
+D:\TSP\TSP_2019_Domashni\StreetFight\StreetFight\obj\Debug\StreetFight.pdb

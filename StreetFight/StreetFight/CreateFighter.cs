@@ -96,7 +96,7 @@ namespace StreetFight
             if (NameSet)
             {
                 int id = D.GetNewFighterID();
-                Fighter fighter = new Fighter(id, FighterName, Health, Strength, Defense, 0);
+                Fighter fighter = new Fighter(id, FighterName, Health, Strength, Defense, 0,"");
                 D.WriteFighter(fighter);
                 Form MainGame = new MainGame(id);
                 MainGame.Show();
