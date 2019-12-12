@@ -16,7 +16,8 @@ namespace StreetFight
         public int Strength = 8;
         public int Defense = 8;
         public int Health = 8;
-        public string Name;
+        public string FighterName;
+        bool NameSet;
         DataBaseOperations D = new DataBaseOperations();
         public CreateFighter()
         {
@@ -30,6 +31,7 @@ namespace StreetFight
             numericUpDownForStrength.Value = 8;
             numericUpDownForhealth.Value = 8;
             BonusStats.Text = BonusStats.Text + Stats.ToString();
+            NameSet = false;
         }
 
         private void numericUpDownForStrength_ValueChanged(object sender, EventArgs e)
@@ -85,17 +87,25 @@ namespace StreetFight
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
-            Name = NameTextBox.Text;
+            FighterName = NameTextBox.Text;
+            NameSet = true;
         }
 
         private void CFighter_Click(object sender, EventArgs e)
         {
-            int id = D.GetNewFighterID();
-            Fighter fighter = new Fighter(id,Name,Health,Strength,Defense,0);
-            D.WriteFighter(fighter);
-            /*Form MainGame = new MainGame(fighter);
-            MainGame.Show();
-            this.Hide();*/
+            if (NameSet)
+            {
+                int id = D.GetNewFighterID();
+                Fighter fighter = new Fighter(id, FighterName, Health, Strength, Defense, 0);
+                D.WriteFighter(fighter);
+                Form MainGame = new MainGame(id);
+                MainGame.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Please input a name for your fighter.", "Create Fighter", MessageBoxButtons.OK);
+            }
         }
     }
 }

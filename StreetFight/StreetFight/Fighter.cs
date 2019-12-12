@@ -9,14 +9,14 @@ namespace StreetFight
     class Fighter
     {
         private int ID;
-        public string Name;
+        private string Name;
         private int HP;
         private int MaxHP;
         private int Att;
         private int Def;
-        private List<Item> Items;
+        private string ItemsString;
         private int Money;
-        public Fighter(int I,string N, int H, int A, int D, int M)
+        public Fighter(int I,string N, int H, int A, int D, int M,string It)
         {
             ID = I;
             Name = N;
@@ -25,18 +25,24 @@ namespace StreetFight
             Att = H;
             Def = D;
             Money = M;
+            ItemsString = It;
         }
-        public void AddItem(Item I)
+        public int AddItem(Item I)
         {
-            if (Items.Count <= 4)
+            if(ItemsString.Length < 8)
             {
-                Items.Add(I);
                 MaxHP = MaxHP + I.HpBomus;
                 Att = Att + I.AttBonus;
                 Def = Def + I.DefBonus;
+                ItemsString = ItemsString + "|" + I.ID.ToString();
+                DataBaseOperations DB = new DataBaseOperations();
+                DB.UpdateFighter(this);
+                return 0;
             }
-            DataBaseOperations DB = new DataBaseOperations();
-            DB.UpdateFighter(this);
+            else
+            {
+                return 1;
+            }
         }
         public void SetHP(int newHP)
         {
@@ -49,6 +55,8 @@ namespace StreetFight
         public void SetAtt(int NewAtt)
         {
             Att = NewAtt;
+            DataBaseOperations DB = new DataBaseOperations();
+            DB.UpdateFighter(this);
         }
         public int GetAtt()
         {
@@ -57,6 +65,8 @@ namespace StreetFight
         public void SetDef(int NewDef)
         {
             Def = NewDef;
+            DataBaseOperations DB = new DataBaseOperations();
+            DB.UpdateFighter(this);
         }
         public int GetDef()
         {
@@ -69,10 +79,14 @@ namespace StreetFight
         public void SetMoney(int NewMoney)
         {
             Money = NewMoney;
+            DataBaseOperations DB = new DataBaseOperations();
+            DB.UpdateFighter(this);
         }
         public void SetMaxHP(int NewMaxHP)
         {
             MaxHP = NewMaxHP;
+            DataBaseOperations DB = new DataBaseOperations();
+            DB.UpdateFighter(this);
         }
         public int GetMaxHP()
         {
@@ -91,16 +105,15 @@ namespace StreetFight
         }
         public string GetItemsInString()
         {
-            string ToReturn = "";
-            foreach (Item item in Items)
-            {
-                ToReturn = ToReturn + item.ID.ToString() + ",";
-            }
-            return ToReturn;
+            return ItemsString;
         }
         public int getID()
         {
             return ID;
+        }
+        public string GetName()
+        {
+            return Name;
         }
     }
 }

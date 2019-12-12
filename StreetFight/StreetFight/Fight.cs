@@ -11,6 +11,12 @@ namespace StreetFight
         private Fighter Player;
         private Fighter Oponent;
         Random rand1;
+
+        public Fight(Fighter player,Fighter oponent)
+        {
+            Player = player;
+            Oponent = oponent;
+        }
         public int CalcReward()
         {
             return (Oponent.GetHP() + Oponent.GetAtt() + Oponent.GetDef()) / 5;
@@ -28,20 +34,19 @@ namespace StreetFight
                     Player.SetHP(Player.GetHP() - rand1.Next(1, 4) + Oponent.AttackDamage());
                 }
             }
-            if (Player.GetHP() < 0)
+            if (Player.GetHP() < 0 && Oponent.GetHP() < 0)
             {
                 return 0;
             }
             else if (Oponent.GetHP() < 0)
             {
-                Player.SetMoney(Player.GetMoney() + CalcReward());
-                Player.SetHP(Player.GetMaxHP());
                 return 1;
             }
-            else
+            else if (Player.GetHP() < 0)
             {
                 return 2;
             }
+            return 0;
         }
     }
 }

@@ -27,11 +27,10 @@ namespace StreetFight
             List<Fighter> fighters = new List<Fighter>();
             SqlConnection NewConn = new SqlConnection(DbConn);
             NewConn.Open();
-            string query = "SELECT * FROM FighterData";
+            string query = "SELECT * FROM FighterData;";
             SqlCommand cmd = new SqlCommand(query, NewConn);
             SqlDataReader Dreader;
             Dreader = cmd.ExecuteReader();
-            int i = 0;
             while (Dreader.Read())
             {
                 int id = int.Parse(Dreader.GetString(1));
@@ -39,11 +38,38 @@ namespace StreetFight
                 int health = int.Parse(Dreader.GetString(3));
                 int att = int.Parse(Dreader.GetString(4));
                 int def = int.Parse(Dreader.GetString(5));
+                string items = Dreader.GetString(6);
                 int money = int.Parse(Dreader.GetString(7));
-                Fighter fighter = new Fighter(id, name, health, att, def, money);
+                Fighter fighter = new Fighter(id, name, health, att, def, money,items);
                 fighters.Add(fighter);
             }
             return fighters;
+        }
+
+        public Fighter GetFighter(int FighterID)
+        {
+            SqlConnection NewConn = new SqlConnection(DbConn);
+            NewConn.Open();
+            string query = "SELECT * FROM FighterData WHERE ID = " + FighterID.ToString() + ";";
+            SqlCommand cmd = new SqlCommand(query, NewConn);
+            SqlDataReader Dreader;
+            Dreader = cmd.ExecuteReader();
+            if (Dreader.Read())
+            {
+                int id = int.Parse(Dreader.GetString(1));
+                string name = Dreader.GetString(2);
+                int health = int.Parse(Dreader.GetString(3));
+                int att = int.Parse(Dreader.GetString(4));
+                int def = int.Parse(Dreader.GetString(5));
+                string items = Dreader.GetString(6);
+                int money = int.Parse(Dreader.GetString(7));
+                Fighter fighter1 = new Fighter(id, name, health, att, def, money,items);
+                return fighter1;
+            }
+            else
+            {
+                return null;
+            }
         }
         public int GetNewFighterID()
         {
@@ -67,5 +93,26 @@ namespace StreetFight
             SqlCommand cmd = new SqlCommand(query, NewConn);
         }
 
+        public List<Item> GetItems()
+        {
+            List<Item> Items = new List<Item>();
+            SqlConnection NewConn = new SqlConnection(DbConn);
+            NewConn.Open();
+            string query = "SELECT * FROM FighterData;";
+            SqlCommand cmd = new SqlCommand(query, NewConn);
+            SqlDataReader Dreader;
+            Dreader = cmd.ExecuteReader();
+            while (Dreader.Read())
+            {
+                Item item = new Item();
+                item.ID = Dreader.GetInt32(1);
+                item.Name = Dreader.GetString(2);
+                item.HpBomus = Dreader.GetInt32(3);
+                item.AttBonus = Dreader.GetInt32(4);
+                item.DefBonus = Dreader.GetInt32(5);
+                Items.Add(item);
+            }
+            return Items;
+        }
     }
 }
